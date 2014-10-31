@@ -1,0 +1,19 @@
+<div id="actualityContainer">
+				<div id="actualityTitle">
+					<center>	
+						<p>
+							<input type="text" size="50" placeholder="rechercher horaire, train, itinéraire...">
+							<input type="submit" value="Rechercher" onclick="javascript:rechercher()">
+						</p>
+					</center>
+					
+					<div id="searchResult" style="display:none">
+						<div id="map"></div>
+					</div>
+				</div>
+				<div id="anActuality">1</div>
+				<div id="anActuality">2</div>
+				<div id="anActuality">3</div>
+				<div id="anActuality">4</div>
+				<div id="anActuality">5</div>
+			</div>
