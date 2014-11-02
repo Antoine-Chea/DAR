@@ -4,7 +4,7 @@
 #partie2 {
 	height: 500px;
 	width: 100%;
-	background-color: black;
+	background-color: #A9D0F5;
 }
 
 #tchatContainer {
@@ -13,7 +13,7 @@
 	!border:1px solid #DDD;
 }
 #tchatTitle  {
-	background-color: black;
+	background-color: #BDBDBD;
 	color: white;
 	font-size: 30px;
 	width:1000px;
@@ -25,8 +25,8 @@
 	-moz-border-radius:5px;
 }
 #aTchatRoom {
-	background-color: black;
-	color: white;
+	background-color: #D8D8D8;
+	color: black;
 	font-size: 15px;
 	width:1000px;
 	min-height: 25px;
@@ -47,7 +47,7 @@
 }
 
 #discussion {
-	!color: black;
+	color: black;
 	!background-color: white;
 	width: 99%;
 	height: 240px;
@@ -63,11 +63,11 @@ table {
 }
 td {
     border-bottom:1pt solid gray;
-	color: white;
+	color: black;
 }
 table.tr.td {
 	text-align: left;
-	color: white;
+	color: black;
 }
 
 #pseudo {

@@ -50,6 +50,7 @@ function addMarker(latitude, longitude, content, type) {
 		if (menu == 1) { // info trains
 			
 		} else if (menu == 2) { // info station
+			station = content;
 			ajaxGetInfoStation("/stopArea", latitude + "/" + longitude);
 		} else if (menu == 3) { // itinéraire
 			if (document.getElementById('lblArrivee').innerHTML != content) {
@@ -64,7 +65,7 @@ function addMarker(latitude, longitude, content, type) {
 		if (menu == 1) { // info trains
 			
 		} else if (menu == 2) { // info station
-			
+			station = content;
 		} else if (menu == 3) { // itinéraire
 			if (document.getElementById('lblDepart').innerHTML != content) {
 				document.getElementById('lblArrivee').innerHTML = "";
@@ -102,13 +103,6 @@ function calculate(){
 	        directionsService.route(request, function(response, status){
 	            if(status == google.maps.DirectionsStatus.OK){
 	                direction.setDirections(response);
-	                setTimeout(function() {
-	                	direction.setMap(null);
-	                	direction = new google.maps.DirectionsRenderer({
-	                	    map   : map, 
-	                	    panel : panel 
-	                	});
-	                }, 5000);
 	            }
 	        });
 	    } else {
@@ -118,6 +112,16 @@ function calculate(){
 	} else {
 	    //alert("Vous devez selectionner un point de départ et un point d'arrivé.");
 	}
+}
+
+function reinit() {
+ 	direction.setMap(null);
+ 	direction = new google.maps.DirectionsRenderer({
+ 	    map   : map, 
+ 	    panel : panel 
+ 	});
+ 	map.setZoom(12);
+	 
 }
 
 function ajaxGetInfoStation(url, coord) {
@@ -144,8 +148,8 @@ function ajaxGetInfoStation(url, coord) {
 				var ss = s.substring(1, s.length-2);
 				var sss = ss.split(", ");
 				sss.sort(); 
-				var txt = "<p/><table><tr><td colspan='2'>Sation: </td></tr><tr><td>Direction</td><td>Heure</td><tr></tr>"; 
-
+				var txt = "<p/><table><tr><td colspan='2'>Station: "+station+"</td></tr><tr><td>Direction</td><td>Heure</td><tr></tr>"; 
+				station = "";
 				for (var i=0; i<sss.length; i++) {
 					var nD = sss[i].split("/");
 					var d = nD[2];

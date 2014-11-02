@@ -75,8 +75,10 @@ function ajaxGetLine(url) {
 				var container = document.getElementById("tchatContainer");
 				container.innerHTML = "<div id='tchatTitle'  onclick='javascript:t(0)'><label>Tchat Room</label></div>";
 				nbTchat = obj.lines.length;
+				var codes = [];
 				for (i=0; i<obj.lines.length; i++) {
 					//alert(obj.lines[i].nom);
+					codes.push(obj.lines[i].code);
 					container.innerHTML += "<div id='aTchatRoom' onclick='javascript:t("+(i+1)+")'>" +
 					"<label>Ligne "+obj.lines[i].code+"</label>" +
 					"<div id='tchat"+(i+1)+"' class='tchat' style='display:none'>" +

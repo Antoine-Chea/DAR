@@ -148,7 +148,7 @@ function ajaxPostInscription(url, nom, prenom, pseudo, email, motDePasse, motDeP
 					s += "<tr><td class='tdInscription'><label>Mot de passe</label></td><td class='tdIns'><input type='password' name='motDePasse' id='motDePasseI' onKeyPress='if (event.keyCode == 13) inscription()'/></td></tr>";
 					s += "<tr><td class='tdInscription'><label>Confirmer le mot de passe</label></td><td class='tdIns'><input type='password' name='motDePasseConfirme' id='motDePasseConfirme' onKeyPress='if (event.keyCode == 13) inscription()'/></td></tr>";
 					s += "<tr><td class='tdIns'><p></p></td></tr>";
-					s += "<tr><td colspan='2' class='tdIns'><input type='submit' value='Je m inscrire!' onclick='javascript:inscription()'/></td></tr>";
+					s += "<tr><td colspan='2' class='tdIns'><input type='submit' value='Je m inscris !' onclick='javascript:inscription()'/></td></tr>";
 					s += "<tr><td colspan='2' class='tdIns'><a href='javascript:annulerCompte()'>Annuler</a></td></tr>";
 					document.getElementById("tableInscription").innerHTML = s;	
 					

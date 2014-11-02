@@ -25,8 +25,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-class>com.navitia.servlet.StopAreaServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>BackEndServlet</servlet-name>
-		<servlet-class>com.navitia.servlet.backend.BackEndServlet</servlet-class>
+		<servlet-name>UpdateBackendServlet</servlet-name>
+		<servlet-class>com.navitia.servlet.backend.UpdateBackendServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>TchatBackendServlet</servlet-name>
@@ -54,8 +54,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/stopArea</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>BackEndServlet</servlet-name>
-		<url-pattern>/backend</url-pattern>
+		<servlet-name>UpdateBackendServlet</servlet-name>
+		<url-pattern>/updateBackend</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>TchatBackendServlet</servlet-name>

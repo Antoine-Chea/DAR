@@ -4,18 +4,18 @@
 #partie1 {
    height: 625px;
    width: 100%;
-   background-color: #2E9AFE;
+   background-color: white;
 }
 #bandeau {
    text-align: center;
    height: 100px;
    width: 100%;
-   background-color: black;
+   background-color: #A9D0F5;
    color: white;
    margin-top: 10px;
    margin-bottom: 15px;
    font-size: 80px;
-   font-family: "French Script MT", Times, serif;
+   font-family: "", Times, serif;
 }
 
 .tdConnexion {
@@ -30,7 +30,7 @@
 
 #connexion {
    float: right;
-   background-color: black;
+   !background-color: black;
    color: white;
    margin-right: 50px;
    padding-top: 0px;
@@ -71,10 +71,10 @@
    width: 1000px;
 }
 #Inscription {
-   background-color: black;
-   color: white;
+   background-color: #BDBDBD;
+   color: black;
    margin-right: 50px;
-   padding-top: 10px;
+   padding-top: 0px;
    font-size: 15px;
    height: 500px;
    width: 500px;
@@ -86,6 +86,9 @@
 #map {
    height: 500px;
    width: 800px;
+   border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
 }
 
 #menu {
@@ -95,7 +98,7 @@
    !background-color: black;
 }
 #menuTitle  {
-   background-color: black;
+   background-color: #BDBDBD;
    color: white;
    width:195px;
    height: 25px;
@@ -107,8 +110,8 @@
    -moz-border-radius:5px;
 }
 #menuItem {
-   background-color: black;
-   color: white;
+   background-color: #D8D8D8;
+   color: black;
    width:195px;
    min-height: 25px;
    padding-top: 5px;
@@ -119,11 +122,13 @@
    -moz-border-radius:5px;
 }
 #infoTrain {
+   color: black;
    border-radius:5px;
    -webkit-border-radius:5px;
    -moz-border-radius:5px;
 }
 #infoStation {
+   color: black;
    border-radius:5px;
    -webkit-border-radius:5px;
    -moz-border-radius:5px;
@@ -140,22 +145,23 @@
 
 .itineraire {
    width: 50px;
+   color: black;
 }
 
 .tableInscription {
+   color: black;
    width: 400px;
    text-align: center;
 }
 .tdInscription {
+   color: black;
    text-align: left;
    width: 200px;
    border-bottom:0pt solid white;
 }
-.tdIns {
-   border-bottom:0pt solid white;
-}
 
 i {
+   color: black;
    font-size: 11px;
 }
 
@@ -185,14 +191,29 @@ ul {
     margin: 0px;
 }
 
+.tdIns {
+   color: black;
+   border-bottom:0pt solid white;
+}
+
+.tdtitre {
+   color: white;
+   border-bottom:0pt solid white;
+}
+
 .recherche {
    font-size: 12px;
+   color: black;
 }
 .tdRech {
    border-bottom:0pt solid white;
 }
 
-.ui-autocomplete { height: 200px; overflow-y: scroll; overflow-x: hidden;}
+.ui-autocomplete { 
+	height: 200px; 
+	overflow-y: scroll; 
+	overflow-x: hidden;
+}
 
 
 

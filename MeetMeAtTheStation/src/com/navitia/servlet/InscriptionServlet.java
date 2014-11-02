@@ -3,6 +3,8 @@ package com.navitia.servlet;
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class InscriptionServlet extends HttpServlet {
 		
 		List<Utilisateur> utilisateurs = null;
 		if (id.equals("null")) {
-			utilisateurs = ofy().load().type(Utilisateur.class).filter("email ==", email).filter("motDePasse ==", motdepasse).list();
+			utilisateurs = ofy().load().type(Utilisateur.class).filter("email ==", email).filter("motDePasse ==", md5(motdepasse)).list();
 		} else {
 			System.out.println("id[" + id + "]");
 			utilisateurs = ofy().load().type(Utilisateur.class).filter("id ==", new Long(id)).list();
@@ -74,7 +76,7 @@ public class InscriptionServlet extends HttpServlet {
 					if (email.matches(re)) {
 						ArrayList<Long> amis = new ArrayList<Long>();
 						amis.add((long) -1);
-						Utilisateur u = new Utilisateur(nom, prenom, pseudo,  email, motDePasse, amis);
+						Utilisateur u = new Utilisateur(nom, prenom, pseudo,  email, md5(motDePasse), amis);
 						
 						List<Utilisateur> utilisateurs = ofy().load().type(Utilisateur.class).filter("email ==", email).list();
 						if (utilisateurs.size() == 0) {
@@ -113,5 +115,26 @@ public class InscriptionServlet extends HttpServlet {
 				req.setAttribute("code", "1");
 				this.getServletContext().getRequestDispatcher("/jsp/inscription.jsp").forward(req, resp);
 			}
+	}
+	
+	public static String md5(String s) {
+		try {
+			String original = s;
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			md.update(original.getBytes());
+			byte[] digest = md.digest();
+			StringBuffer sb = new StringBuffer();
+			for (byte b : digest) {
+				sb.append(String.format("%02x", b & 0xff));
+			}
+		
+			//System.out.println("original:" + original);
+			//System.out.println("digested(hex):" + sb.toString());
+			
+			return sb.toString();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

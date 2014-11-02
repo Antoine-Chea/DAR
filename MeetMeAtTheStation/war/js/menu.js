@@ -9,6 +9,7 @@ function closeAllMenu() {
 
 	var d = document.getElementById("infoStation");
 	d.setAttribute("style", "display:none");
+	station = "";
 	document.getElementById("infoStation").innerHTML = "<p/><label>Cliquez sur une station de la carte</label>";
 
 	var d = document.getElementById("itineraire");
